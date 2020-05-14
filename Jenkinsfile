@@ -54,9 +54,9 @@ spec:
         container("kubectl") {
           k8sRolloutBeta(props.project)
         }
-        container("golang") {
-          k8sFuncTestGolang(props.project, props.domain)
-        }
+//         container("golang") {
+//           k8sFuncTestGolang(props.project, props.domain)
+//         }
       } catch(e) {
           error "Failed functional tests"
       } finally {
@@ -82,9 +82,9 @@ spec:
           container("kubectl") {
             k8sRollout(props.project)
           }
-          container("golang") {
-            k8sProdTestGolang(props.addr)
-          }
+//           container("golang") {
+//             k8sProdTestGolang(props.addr)
+//           }
         } catch(e) {
           container("helm") {
             k8sRollback(props.project)
